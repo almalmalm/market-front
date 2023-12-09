@@ -6,8 +6,10 @@ export interface IItem {
   __v?: string;
   image: string;
   category: string;
+  isInCart: boolean;
 }
 
 export interface IItemProps extends IItem {
-  onClick: (id: string) => void;
+  deleteItem: (id: string) => void;
+  addToCart: (id: string) => void;
 }

@@ -1,27 +1,23 @@
+import Image from 'next/image';
 import React from 'react';
-import { MenuItem } from './MenuItem';
-import styles from '@/app/styles/Header.module.css';
+import { Search } from './Search';
+import { Menu } from './Menu';
 import Link from 'next/link';
 
 export const Header = () => {
   return (
-    <div className={styles.menu_container}>
-      <Link href="/">
-        <img src="market-marketplace-high-resolution-logo-transparent.svg" alt="Logo" width={200} />
+    <header className="header__container">
+      <Link href="/" className="header__logo_nike">
+        <Image src="/nike_logo.svg" alt="Nike logo" width={58} height={58} className="header__logo_hovered" />
       </Link>
-      <div className={styles.menu_items}>
-        <MenuItem href="/home" name="Home" />
-        <MenuItem href="/categories" name="Categories" />
-        <MenuItem href="/deals" name="Deals" />
-        <MenuItem href="/sell" name="Sell" />
-        <MenuItem href="/about" name="About" />
-        <MenuItem href="/support" name="Support" />
-        <MenuItem href="/faq" name="FAQ" />
-        <MenuItem href="/account" name="Account" />
-      </div>
-      <Link href="/cart">
-        <img src="shopping-cart.svg" alt="Cart icon" width={48} />
+      <Menu />
+      <Search />
+      <Link href="/favorites" className="header__icon header__icon_hovered">
+        <Image src="/favorite_icon.svg" alt="Favorites icon" width={24} height={24} />
       </Link>
-    </div>
+      <Link href="/cart" className="header__icon header__icon_hovered">
+        <Image src="/bag_icon.svg" alt="Bag icon" width={24} height={24} className="header__icon_hovered" />
+      </Link>
+    </header>
   );
 };

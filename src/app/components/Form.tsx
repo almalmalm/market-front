@@ -70,6 +70,7 @@ export const Form = ({ updateItems }: { updateItems: () => void }) => {
         <option value="Cars">Cars</option>
         <option value="Animals">Animals</option>
         <option value="Toys">Toys</option>
+        <option value="Electronics">Electronics</option>
       </select>
       <button type="submit">Save</button>
     </form>

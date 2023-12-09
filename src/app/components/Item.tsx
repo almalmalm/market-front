@@ -1,15 +1,15 @@
 import React from 'react';
 import { IItemProps } from '../types/Interfaces';
-import styles from '@/app/styles/Item.module.css';
 
-const Item: React.FC<IItemProps> = ({ name, price, quantity, image, _id, onClick }) => {
+const Item: React.FC<IItemProps> = ({ name, price, quantity, image, _id, deleteItem, addToCart, isInCart }) => {
   return (
-    <div className={styles.item_container}>
+    <div>
       <img src={image} alt={name} width={250} />
       <span>{name}</span>
       <span>${price}</span>
       <span>{quantity}</span>
-      <button onClick={() => onClick(_id)}>Delete</button>
+      {isInCart ? <button>Remove</button> : <button onClick={() => addToCart(_id)}>Buy</button>}
+      <button onClick={() => deleteItem(_id)}>Delete</button>
     </div>
   );
 };
